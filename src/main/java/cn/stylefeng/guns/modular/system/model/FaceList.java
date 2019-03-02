@@ -2,6 +2,7 @@ package cn.stylefeng.guns.modular.system.model;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author lichuang
+ * @author stylefeng
  * @since 2019-03-02
  */
 @TableName("attendance_faceList")
@@ -24,6 +25,7 @@ public class FaceList extends Model<FaceList> {
     /**
      * 对应sys_user id
      */
+    @TableField("student_id")
     private Integer studentId;
     /**
      * 图片存放物理位置

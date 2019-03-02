@@ -1,0 +1,36 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="" value="${item.id}" underline="true"/>
+                            <#input id="courseId" name="外键 课程id" value="${item.courseId}" underline="true"/>
+                            <#input id="teacherId" name="外键 sys_user id" value="${item.teacherId}" underline="true"/>
+                            <#input id="classroomId" name="外键 教室id" value="${item.classroomId}" underline="true"/>
+                            <#input id="startTime" name="起始节数 填数字1-13" value="${item.startTime}" underline="true"/>
+                            <#input id="endTime" name="终止节数 填数字1-13  起始节数分别为1-2节时上课时间为8:20-9-55" value="${item.endTime}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="day" name="周几的课 填数字1-7 1代表周一 7代表周日" value="${item.day}" underline="true"/>
+                            <#input id="startWeek" name="起始周数 填数字1-18" value="${item.startWeek}" underline="true"/>
+                            <#input id="endWeek" name="结束周数 填数字1-18" value="${item.endWeek}" underline="true"/>
+                            <#input id="isSingle" name="1为单周 0位双周" value="${item.isSingle}" underline="true"/>
+                            <#input id="actualWeek" name="实际上课周数 [1],[3],[5], 代表1,2,5周上课" value="${item.actualWeek}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="TeachInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="TeachInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/teach/teach/teach_info.js"></script>
+@}

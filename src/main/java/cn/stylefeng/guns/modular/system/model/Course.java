@@ -2,6 +2,7 @@ package cn.stylefeng.guns.modular.system.model;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author lichuang
+ * @author stylefeng
  * @since 2019-03-02
  */
 @TableName("attendance_course")
@@ -24,18 +25,22 @@ public class Course extends Model<Course> {
     /**
      * 课程号
      */
+    @TableField("course_num")
     private String courseNum;
     /**
      * 课程名
      */
+    @TableField("course_name")
     private String courseName;
     /**
      * 课时
      */
+    @TableField("course_timespan")
     private Integer courseTimespan;
     /**
      * 学分
      */
+    @TableField("course_point")
     private Integer coursePoint;
 
 

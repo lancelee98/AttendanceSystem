@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.system.dao.TeachMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.system.model.Teach">
+        <id column="id" property="id" />
+        <result column="course_id" property="courseId" />
+        <result column="teacher_id" property="teacherId" />
+        <result column="classroom_id" property="classroomId" />
+        <result column="start_time" property="startTime" />
+        <result column="end_time" property="endTime" />
+        <result column="day" property="day" />
+        <result column="start_week" property="startWeek" />
+        <result column="end_week" property="endWeek" />
+        <result column="is_single" property="isSingle" />
+        <result column="actual_week" property="actualWeek" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, course_id, teacher_id, classroom_id, start_time, end_time, day, start_week, end_week, is_single, actual_week
+    </sql>
+
+</mapper>

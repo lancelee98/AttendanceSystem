@@ -2,6 +2,7 @@ package cn.stylefeng.guns.modular.system.model;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author lichuang
+ * @author stylefeng
  * @since 2019-03-02
  */
 @TableName("attendance_teach")
@@ -24,22 +25,27 @@ public class Teach extends Model<Teach> {
     /**
      * 外键 课程id
      */
+    @TableField("course_id")
     private Integer courseId;
     /**
      * 外键 sys_user id
      */
+    @TableField("teacher_id")
     private Integer teacherId;
     /**
      * 外键 教室id
      */
+    @TableField("classroom_id")
     private Integer classroomId;
     /**
      * 起始节数 填数字1-13
      */
+    @TableField("start_time")
     private Integer startTime;
     /**
      * 终止节数 填数字1-13  起始节数分别为1-2节时上课时间为8:20-9-55
      */
+    @TableField("end_time")
     private Integer endTime;
     /**
      * 周几的课 填数字1-7 1代表周一 7代表周日
@@ -48,18 +54,22 @@ public class Teach extends Model<Teach> {
     /**
      * 起始周数 填数字1-18
      */
+    @TableField("start_week")
     private Integer startWeek;
     /**
      * 结束周数 填数字1-18
      */
+    @TableField("end_week")
     private Integer endWeek;
     /**
      * 1为单周 0位双周
      */
-    private Integer idSingleWeek;
+    @TableField("is_single")
+    private Integer isSingle;
     /**
-     * 实际上课周数 [1],[2],[5], 代表1,2,5周上课
+     * 实际上课周数 [1],[3],[5], 代表1,2,5周上课
      */
+    @TableField("actual_week")
     private String actualWeek;
 
 
@@ -135,12 +145,12 @@ public class Teach extends Model<Teach> {
         this.endWeek = endWeek;
     }
 
-    public Integer getIdSingleWeek() {
-        return idSingleWeek;
+    public Integer getIsSingle() {
+        return isSingle;
     }
 
-    public void setIdSingleWeek(Integer idSingleWeek) {
-        this.idSingleWeek = idSingleWeek;
+    public void setIsSingle(Integer isSingle) {
+        this.isSingle = isSingle;
     }
 
     public String getActualWeek() {
@@ -168,7 +178,7 @@ public class Teach extends Model<Teach> {
         ", day=" + day +
         ", startWeek=" + startWeek +
         ", endWeek=" + endWeek +
-        ", idSingleWeek=" + idSingleWeek +
+        ", isSingle=" + isSingle +
         ", actualWeek=" + actualWeek +
         "}";
     }

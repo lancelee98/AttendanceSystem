@@ -3,6 +3,7 @@ package cn.stylefeng.guns.modular.system.model;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.io.Serializable;
  * 
  * </p>
  *
- * @author lichuang
+ * @author stylefeng
  * @since 2019-03-02
  */
 @TableName("attendance_face")
@@ -25,6 +26,7 @@ public class Face extends Model<Face> {
     /**
      * 若识别出是谁 则填学生id 若未识别出 则不填
      */
+    @TableField("student_id")
     private Integer studentId;
     /**
      * 照片物理地址
@@ -41,10 +43,12 @@ public class Face extends Model<Face> {
     /**
      * 教室编号
      */
+    @TableField("classroom_id")
     private Integer classroomId;
     /**
      * 识别时间
      */
+    @TableField("create_time")
     private Date createTime;
 
 
