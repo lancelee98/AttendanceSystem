@@ -1,8 +1,25 @@
+target/
+!target/classes/*.dll
+!target/classes/*.lib
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+
 # Compiled class file
 *.class
 *.iml
 *.idea
 target/
+!target/classes/*.dll
+!target/classes/*.lib
 logs/
 
 # Log file
@@ -31,3 +48,5 @@ hs_err_pid*
 .classpath
 .project
 .settings/
+guns-admin/src/main/webapp/static/photos/
+
