@@ -13,4 +13,8 @@
         id, name
     </sql>
 
+    <select id="test" resultType="map">
+        select * from attendance_classroom
+    </select>
+
 </mapper>
