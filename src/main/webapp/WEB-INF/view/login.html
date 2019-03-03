@@ -4,12 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Guns - 登录</title>
+    <title>考勤系统 - 登录</title>
 
     <link rel="shortcut icon" href="${ctxPath}/static/favicon.ico">
-    <link href="${ctxPath}/static/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
-    <link href="${ctxPath}/static/css/font-awesome.css?v=4.4.0" rel="stylesheet">
-    <link href="${ctxPath}/static/css/style.css?v=4.1.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/login/bootstrap.min.css?v=4.0.0" rel="stylesheet">
+    <link href="${ctxPath}/static/css/login/signin.css" rel="stylesheet">
     <script>if (window.top !== window.self) {
         window.top.location = window.location;
     }</script>
@@ -17,45 +16,42 @@
     <script src="${ctxPath}/static/js/bootstrap.min.js?v=3.3.6"></script>
 </head>
 
-<body class="gray-bg">
-
-<div class="middle-box text-center loginscreen">
-    <div style="padding: 100px 0px;">
-        <div>
-            <h1 class="logo-name">GS</h1>
+<body class="text-center">
+    <form class="form-signin" role="form" action="${ctxPath}/login" method="post">
+        <div class="mb-4" style="margin:0 auto;background-color: #563d7c;border-radius: 20%; width:72px;height: 72px;display: table">
+            <div style="display: table-cell;vertical-align: middle">
+                <svg style="" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="55" height="55">
+                    <path d="M848 64h-84c-7.2 0-14.3 2.7-19.8 8.2-5.5 5.5-8.2 12.6-8.2 19.8 0 7.2 2.7 14.3 8.2 19.8 5.5 5.5 12.6 8.2 19.8 8.2h84v84c0 7.2 2.7 14.3 8.2 19.8 5.5 5.5 12.6 8.2 19.8 8.2s14.3-2.7 19.8-8.2c5.5-5.5 8.2-12.6 8.2-19.8v-84c0-30.9-25.1-56-56-56zM876 512c-7.2 0-14.3 2.7-19.8 8.2-5.5 5.5-8.2 12.6-8.2 19.8v84h-84c-7.2 0-14.3 2.7-19.8 8.2-1.5 1.5-2.3 3.4-3.4 5.2-31.6-30.4-67.1-55.4-106.4-72C714.2 517.7 764.7 426 749.2 323c-14.6-96.7-89.6-177.5-185.3-197.5-17.6-3.7-35-5.4-51.9-5.4-132.6 0-240 107.4-240 240 0 87.6 47.5 163.5 117.6 205.4-39.2 16.6-74.8 41.6-106.4 72-1.1-1.8-1.9-3.7-3.4-5.2-5.5-5.5-12.6-8.2-19.8-8.2h-84v-84c0-7.2-2.7-14.3-8.2-19.8-5.5-5.5-12.6-8.2-19.8-8.2s-14.3 2.7-19.8 8.2c-5.5 5.5-8.2 12.6-8.2 19.8v84c0 30.9 25.1 56 56 56h69c-46.8 60.6-79.3 136.5-89.5 221.3-3.8 31.2 21.1 58.7 52.5 58.7h608c31.4 0 56.2-27.6 52.5-58.7-10.2-84.9-42.7-160.8-89.5-221.4h69c30.9 0 56-25.1 56-56v-84c0-7.2-2.7-14.3-8.2-19.8-5.5-5.5-12.6-8.2-19.8-8.2zM211.5 905c16.9-132.8 93.3-242.9 199.9-288 19.4-8.2 32.6-26.7 34.1-47.7 1.5-21.1-9-41.1-27.2-52C361.8 483.6 328 424.7 328 360c0-101.5 82.5-184 184-184 13.4 0 27 1.4 40.4 4.3 72.1 15.1 130.3 77.2 141.4 151.1 11.4 75.5-22.4 146.8-88.2 186-18.1 10.8-28.6 30.9-27.2 52 1.5 21.1 14.6 39.5 34.1 47.7C719 661.9 795.3 771.7 812.4 904l-600.9 1zM148 232c7.2 0 14.3-2.7 19.8-8.2 5.5-5.5 8.2-12.6 8.2-19.8v-84h84c7.2 0 14.3-2.7 19.8-8.2 5.5-5.5 8.2-12.6 8.2-19.8 0-7.2-2.7-14.3-8.2-19.8-5.5-5.5-12.6-8.2-19.8-8.2h-84c-30.9 0-56 25.1-56 56v84c0 7.2 2.7 14.3 8.2 19.8 5.5 5.5 12.6 8.2 19.8 8.2z" fill="#ffffff"></path>
+                </svg>
+            </div>
         </div>
-        <h3>欢迎使用 Guns</h3>
-        <br/>
-        <h4 style="color: red;">${tips!}</h4>
-        <form class="m-t" role="form" action="${ctxPath}/login" method="post">
-            <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="用户名" required="">
+        <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+        <p style="color: red;">${tips!}</p>
+        <div class="form-group">
+            <label class="sr-only">用户名</label>
+            <input type="text" name="username" class="form-control" placeholder="用户名" required="">
+        </div>
+        <div class="form-group">
+            <label class="sr-only">密码</label>
+            <input type="password" name="password" class="form-control" placeholder="密码" required="">
+        </div>
+        @if(kaptcha.getKaptchaOnOff() == true){
+        <div class="form-group">
+            <div style="text-align: left">
+                <input style="display: inline" class="form-control col-sm-4" name="kaptcha"  type="text" placeholder="验证码" required="">
+                <img class="col-sm-4"  id="kaptcha" src="${ctxPath}/kaptcha" width="100%" height="100%"/>
             </div>
-            <div class="form-group">
-                <input type="password" name="password" class="form-control" placeholder="密码" required="">
-            </div>
-            @if(kaptcha.getKaptchaOnOff() == true){
-            <div class="form-group" style="float: left;">
-                <div class="col-sm-8" style="padding-left: 0px; padding-right: 0px;">
-                    <input class="form-control" type="text" name="kaptcha" placeholder="验证码" required="">
-                </div>
-                <div class="col-sm-4" style="padding-left: 0px; padding-right: 0px;">
-                    <img src="${ctxPath}/kaptcha" id="kaptcha" width="100%" height="100%"/>
-                </div>
-            </div>
-            @}
-            <div class="form-group" style="float: left;">
-                <div class="checkbox" style="text-align: left">
-                    <label>
-                        <input type="checkbox" name="remember" style="margin-top: 2px;">记住我
-                    </label>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
-            </p>
-        </form>
-    </div>
-</div>
+        </div>
+        @}
+        <div class="checkbox mb-3" style="text-align: left">
+            <label>
+                <input type="checkbox" name="remember" style="margin-top: 2px;">记住我
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">登 录</button>
+        <p class="mt-5 mb-3 text-muted">© 2018-2019 智能考勤系统</p>
+    </form>
 
 <script>
     $(function () {
