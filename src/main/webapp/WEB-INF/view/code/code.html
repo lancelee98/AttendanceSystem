@@ -14,16 +14,16 @@
                                     <div class="col-sm-9 col-xs-12 text-right">
                                         <div class="fixed-table-toolbar">
                                             <div class="columns columns-right btn-group">
-                                                <div class="btn-group">
-                                                    <span class="btn btn-default">
-                                                        <i class="fa fa-ellipsis-v"></i>
+                                                <div class="btn-group" id="reset">
+                                                    <span class="btn  btn-outline btn-default">
+                                                        <i class="glyphicon glyphicon-repeat"></i>
                                                     </span>
                                                 </div>
                                                 <div class="keep-open btn-group">
                                                     <button data-toggle="dropdown" class="btn dropdown-toggle btn-outline btn-default">
                                                         数据表 <span class="caret"></span>
                                                     </button>
-                                                    <div class="dropdown-menu" id="tableList" data-bind="foreach: tables">
+                                                    <div class="dropdown-menu mydropdownmenu" id="tableList" data-bind="foreach: tables">
                                                         @for(table in tables!){
                                                         <li class="dropdown-item">
                                                             <a href="javascript:void(0)" class="list-group-item" tableName="${table.tableName}"
@@ -38,7 +38,7 @@
                                                             data-toggle="dropdown" aria-expanded="false">
                                                         模板 <span class="caret"></span>
                                                     </button>
-                                                    <div class="dropdown-menu list-group" role="menu"  id="templateList">
+                                                    <div class="dropdown-menu list-group  mydropdownmenu" role="menu"  id="templateList">
                                                         @for(template in templates!){
                                                         <li role="menuitem">
                                                             <a href="javascript:void(0)" class="list-group-item" key="${template.key}" onclick="Code.selectTemplate('${template.key}')">${template.desc}</a>
@@ -128,6 +128,12 @@
     // 阻止下拉菜单点击消失
     $("#templateList").click(function (e) {
         e.stopPropagation();
+    })
+
+    $("#reset").click(function () {
+        $("#bizName").val("");
+        $("#tableName").val("");
+        $("#className").val("");
     })
 </script>
 @}
