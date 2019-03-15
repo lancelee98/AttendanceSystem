@@ -9,17 +9,9 @@
 				<div class="row row-lg">
 					<div class="col-sm-12">
 						<div class="row">
-							<div class="col-lg-2 col-sm-3">
-								<div class="panel panel-default">
-									<div class="panel-heading">组织机构</div>
-									<div class="panel-body dept-tree">
-										<ul id="deptTree" class="ztree"></ul>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-10 col-sm-9">
-								<div class="row">
-									<div class="col-lg-10 col-sm-9">
+							<div class="col-lg-12 col-sm-12">
+								<div class="row" style="margin-bottom: 20px">
+									<div class="col-lg-10 col-sm-8">
 										<div class="row">
 											<div class="col-lg-4 col-sm-12">
 												<#NameCon id="name" name="用户名称" placeholder="帐号/姓名/手机号"/>
@@ -32,7 +24,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="col-lg-2 col-sm-3">
+									<div class="col-lg-2 col-sm-4">
 										<div class="row">
 											<div class="col-lg-12 col-sm-12">
 												<#button name="搜索" icon="fa-search" clickFun="MgrUser.search()"/>
@@ -42,8 +34,20 @@
 									</div>
 								</div>
 								<div class="hidden-xs" id="managerTableToolbar" role="group">
+									<div style="display: inline-block">
+										<div class="dropdown">
+											<button class="btn  btn-outline btn-default dropdown-toggle" data-toggle="dropdown">
+												组织机构
+												<span class="caret"></span>
+											</button>
+											<div class="dropdown-menu dept-tree mydropdownmenu">
+												<ul id="deptTree" class="ztree"></ul>
+											</div>
+										</div>
+									</div>
+
 									@if(shiro.hasPermission("/mgr/add")){
-									<#button name="添加" icon="fa-plus" clickFun="MgrUser.openAddMgr()"/>
+									<#button name="添加" icon="fa-plus" clickFun="MgrUser.openAddMgr()" space="true"/>
 									@}
 									@if(shiro.hasPermission("/mgr/edit")){
 									<#button name="修改" icon="fa-edit" clickFun="MgrUser.openChangeUser()" space="true"/>
@@ -63,7 +67,10 @@
 									@if(shiro.hasPermission("/mgr/setRole")){
 									<#button name="角色分配" icon="fa-user-secret" clickFun="MgrUser.roleAssign()" space="true"/>
 									@}
+
 								</div>
+
+
 								<#table id="managerTable"/>
 							</div>
 						</div>
@@ -81,5 +88,9 @@
     laydate.render({
         elem: '#endTime'
     });
+	// 阻止下拉菜单点击消失
+	$(".mydropdownmenu").click(function (e) {
+		e.stopPropagation();
+	})
 </script>
 @}
