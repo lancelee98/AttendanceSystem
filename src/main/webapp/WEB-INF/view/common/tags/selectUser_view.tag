@@ -6,7 +6,7 @@
 @*/
 <div class="form-group">
     <label class="col-sm-4 control-label text-right">${name}</label>
-    <div class="col-sm-5">
+    <div class="col-sm-5" style="height: 40px">
         <select class="form-control" id="${id}" name="${id}">
             ${tagBody!}
         </select>

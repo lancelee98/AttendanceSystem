@@ -10,7 +10,7 @@ style : 附加的css属性
 @*/
 <div class="form-group">
     <label class="col-sm-4 control-label text-right">${name}</label>
-    <div class="col-sm-5">
+    <div class="col-sm-5" style="height: 40px">
         <input class="form-control" id="${id}" name="${id}"
                @if(isNotEmpty(value)){
                value="${tool.dateType(value)}"

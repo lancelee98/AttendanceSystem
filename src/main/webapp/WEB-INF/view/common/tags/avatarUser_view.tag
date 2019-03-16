@@ -5,7 +5,7 @@
 @*/
 <div class="form-group">
     <label class="col-sm-4 control-label text-right head-scu-label">${name}</label>
-    <div class="col-sm-3">
+    <div class="col-sm-3"  style="height: 40px">
         <div id="${id}PreId">
             <div><img width="100px" height="100px"
                 @if(isEmpty(avatarImg)){

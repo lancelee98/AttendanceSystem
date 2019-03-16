@@ -42,7 +42,7 @@ Dept.openAddDept = function () {
     var index = layer.open({
         type: 2,
         title: '添加部门',
-        area: ['800px', '420px'], //宽高
+        area: ['800px', '450px'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/dept/dept_add'
@@ -58,7 +58,7 @@ Dept.openDeptDetail = function () {
         var index = layer.open({
             type: 2,
             title: '部门详情',
-            area: ['800px', '420px'], //宽高
+            area: ['800px', '450px'], //宽高
             fix: false, //不固定
             maxmin: true,
             content: Feng.ctxPath + '/dept/dept_update/' + Dept.seItem.id

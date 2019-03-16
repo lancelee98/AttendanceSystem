@@ -48,7 +48,7 @@ Menu.openAddMenu = function () {
     var index = layer.open({
         type: 2,
         title: '添加菜单',
-        area: ['830px', '450px'], //宽高
+        area: ['830px', '470px'], //宽高
         fix: false, //不固定
         maxmin: true,
         content: Feng.ctxPath + '/menu/menu_add'
@@ -64,7 +64,7 @@ Menu.openChangeMenu = function () {
         var index = layer.open({
             type: 2,
             title: '修改菜单',
-            area: ['800px', '450px'], //宽高
+            area: ['830px', '470px'], //宽高
             fix: false, //不固定
             maxmin: true,
             content: Feng.ctxPath + '/menu/menu_edit/' + this.seItem.id
