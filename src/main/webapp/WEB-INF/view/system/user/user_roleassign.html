@@ -51,29 +51,31 @@
 
 
 <!-- 配置grid -->
-<div class="container"
-     style="padding:  0px 10px !important; margin-top: -10px; text-align: center !important;">
+<div class="container" style="padding:  0px 10px !important; margin-top: -10px; text-align: center !important;">
     <div class="row">
-        <div class="ibox float-e-margins">
+        <div class="ibox float-e-margins" style="margin-bottom: -10px">
             <div class="ibox-title">
                 <h5>${userAccount!}</h5>
             </div>
-            <div class="ibox-content">
-                <ul id="zTree" class="ztree"></ul>
+            <div class="ibox-content" style="min-height:235px;">
+                <div>
+                    <ul id="zTree" class="ztree"></ul>
+                </div>
+            </div>
+            <div class="row" style="margin-top: 20px">
+                <div class="col-md-12">
+                    <button class="btn btn-sm btn-info" type="button" id="btn_save">
+                        <i class="ace-icon fa fa-check bigger-110"></i> 保存
+                    </button>
+                    &nbsp;
+                    <button class="btn btn-sm btn-danger" type="button" id="btn_close">
+                        <i class="ace-icon fa fa-close bigger-110"></i> 关闭
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <button class="btn btn-sm btn-info" type="button" id="btn_save">
-                <i class="ace-icon fa fa-check bigger-110"></i> 保存
-            </button>
-            &nbsp;
-            <button class="btn btn-sm btn-danger" type="button" id="btn_close">
-                <i class="ace-icon fa fa-close bigger-110"></i> 关闭
-            </button>
-        </div>
-    </div>
+
 </div>
 
 @}
